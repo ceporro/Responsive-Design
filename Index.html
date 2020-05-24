@@ -17,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
+        <i class="icon-menu burguer_button" id="burger_menu"></i>
         <header class="header">
             <div class="wrapper">
                 <figure class="logo">
@@ -44,8 +45,8 @@
                 </h1>
                 <img class="hero_image" src="imagenes/hero.jpg" alt="Hero" width="500" height="300">
             </div>
-        </section>
-        <section id="Portafolio" class="portfolio">
+        </section>  
+         <section id="Portafolio" class="portfolio">
             <div class="wrapper">
                 <h2> Portafolio (proyectos destacados)</h2>
                 <article class="project">
@@ -81,7 +82,12 @@
             <div class="wrapper">
                 <article class="event">
                     <figure class="event_imageCont">
-                        <img class="event_image" src="imagenes/platzi-conf.jpg" alt="" width="300">
+                        <div class="flex_video">
+                            <iframe class="youtube_video" width="727" height="409" src="https://www.youtube.com/embed/01HfAIN1n9k?list=LLFcL4B7-qBP3FBqJQHym8GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- <iframe class="youtube_video" width="545" height="409" src="https://www.youtube.com/embed/2Y3xSv5Cs6U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            <!-- <iframe class="youtube_video" width="775" height="409" src="https://www.youtube.com/embed/RhMYBfF7-hE?list=RDRhMYBfF7-hE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        </div>
+                        <!-- <img class="event_image" src="imagenes/platzi-conf.jpg" alt="" width="300"> -->
                     </figure>
                     <div class="event_detail">
                         <h3 class="event_title">PlatziConf Villalazan 2025</h3>
@@ -91,6 +97,9 @@
                 </article>
                 <article class="event">
                     <figure class="event_imageCont">
+                        <!-- <video class="html_video" src="PMM3b.mp4" width="1280" height="720" controls/>
+                             <source src=""> 
+                        </video> -->
                         <img class="event_image" src="imagenes/platzi-conf.jpg" alt="" width="300">
                     </figure>
                     <div class="event_detail">
@@ -98,7 +107,7 @@
                         <p class="event_description">Un evento muy molon sobre gente que aprende de internet.</p>
                         <a class="event_url" href="https://platzi.com/@ceporro/" target="_blank">Mira mi perfil</a>
                     </div>
-                </article>
+                </article> 
                 <article class="event">
                     <figure class="event_imageCont">
                         <img class="event_image" src="imagenes/platzi-conf.jpg" alt="" width="300">
@@ -121,23 +130,22 @@
                 </article>
             </div>
         </section>
-        <section id="Contacto" class="contact">
+         <section id="Contacto" class="contact">
             <div class="wrapper">
                 <form class="form_email" action="/suscripcion/">
                     <h3>¿Creamos algo juntos?</h3>
-                    <label for="email"><!-- Déjame tu email--></label> 
+                    <label form="email"></label> 
                     <input type="text" placeholder="Déjame tu email" id="email"/>
-                    <!-- <input type="submit" value="Enviar"/> -->
-                    <button>Enviar</button>
+                     <button>Enviar</button> 
                 </form>
-                <div class="social">
-                    <a href="https://twitter.com/leonidasesteban" class="social_link tw" target="_blank"></a>
-                    <a href="https://facebook.com/leonidas.esteban" class="social_link fb" target="_blank"></a>
-                    <a href="https://github.com/leonidasesteban" class="social_link gh" target="_blank"></a>
-                    <a href="https://instagram.com/leonidasesteban" class="social_link ig" target="_blank"></a>
+                <div class="social">                   
+                    <a href="https://twitter.com/leonidasesteban" class="social_link tw" target="_blank"><i class="icon-facebook"></i></a>
+                    <a href="https://facebook.com/leonidas.esteban" class="social_link fb" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://github.com/leonidasesteban" class="social_link gh" target="_blank"><i class="icon-github"></i></a>
+                    <a href="https://instagram.com/leonidasesteban" class="social_link ig" target="_blank"><i class="icon-instagram"></i></a>
                 </div>
             </div>
-        </section>
+        </section> 
         <footer class="footer">
             <div class="wrapper">
                 <div>
@@ -148,6 +156,23 @@
                     </p>
                 </div>
             </div>
-        </footer>
+        </footer> 
+        <script>
+            const menu = document.querySelector('.menu');
+            console.log(menu);
+            const burguerbutton = document.querySelector('#burger_menu');
+            console.log(burguerbutton);
+            
+            function hideShow(){
+                if(menu.classList.contains('active')){
+                    menu.classList.remove('active');
+                }
+                else{
+                    menu.classList.add('active');
+                }
+            }
+
+            burguerbutton.addEventListener('click', hideShow);
+        </script>
     </body>
 </html>
