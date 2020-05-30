@@ -159,10 +159,23 @@
         </footer> 
         <script>
             const menu = document.querySelector('.menu');
-            console.log(menu);
+            // console.log(menu);
+            const ipad = window.matchMedia('screen and (max-width: 481px)');
             const burguerbutton = document.querySelector('#burger_menu');
-            console.log(burguerbutton);
+            // console.log(burguerbutton);
             
+            ipad.addListener(validation);
+            burguerbutton.addEventListener('click', hideShow)
+
+            function validation(event){
+                if(event.matches){
+                    burguerbutton.addEventListener('click', hideShow)
+                }
+                else{
+                    burguerbutton.removeEventListener('click', hideShow)
+                }
+            }
+
             function hideShow(){
                 if(menu.classList.contains('active')){
                     menu.classList.remove('active');
@@ -171,8 +184,6 @@
                     menu.classList.add('active');
                 }
             }
-
-            burguerbutton.addEventListener('click', hideShow);
         </script>
     </body>
 </html>
